@@ -1,0 +1,22 @@
+name: "KitchenOwl"
+version: "v0.6.11"
+slug: "kitchenowl"
+description: "A self-hosted grocery list and recipe manager"
+url: "https://kitchenowl.org"
+image: "docker.io/tombursch/kitchenowl"
+init: false
+arch:
+  - amd64
+startup: application
+webui: "[PROTO:option_name]://[HOST]:[PORT:8080]"
+boot: auto
+ports:
+  8080/tcp: 8080
+options:
+  jwt_secret: "test"
+  port: 8080
+  open_registration: false
+schema:
+  jwt_secret: str
+  port: int
+  open_registration: bool
